@@ -24,23 +24,49 @@
             font-family: 'Quicksand', sans-serif;
             margin: 0;
         }
+
+        product-detail{
+            width: 360px;
+            padding-bottom: 24px;
+        }
+
+        product-detail > img:nth-child(1):hover{
+            cursor: pointer;
+        }
+
+        .primary-button{
+            background-color: var(--hospital-green);
+            border: none;
+            border-radius: 8px;
+            color: var(--white);
+            cursor: pointer;
+            font-size: var(--md);
+            font-weight: bold;
+            height: 50px;
+            width: 100%;
+        }
+
+        .add-to-cart-button{
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+
     </style>
 </head>
 <body>
-    <aside class="produtc-detail">
+    <aside class="product-detail">
         <img src="./icons/icon_close.png" alt="close">
-        <img src="src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="computer">
+        <img src="./img/Computer.jpg" alt="computer">
         <div class="">
             <p>$50</p>
             <p>Computer</p>
-            <p>- KIT DEORE XT DE 11V / COROA 34D
-                - FREIO XT
-                - SUSPENSÃO ROCKSHOX SID COM TRAVA NO GUIDON
-                - COCKPIT FSA
-                - RODAS STANS NOTUBES
+            <p>Os Computadores EasyPC equipados com processadores Intel Core i7 
+                têm desempenho surpreendente. Execute múltiplas tarefas ao mesmo tempo com fluidez.
             </p>
-            <button class="primary-button">
+            <button class="primary-button add-to-cart-button">
                 <img src="./icons/btn_add_to_card.svg" alt="add">
+                Add to cart
             </button>
         </div>
     </aside>
