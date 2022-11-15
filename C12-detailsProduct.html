@@ -25,25 +25,70 @@
             margin: 0;
         }
 
-        product-detail{
+        .product-detail{
             width: 360px;
             padding-bottom: 24px;
+            position: absolute;
+            right: 0;
         }
 
-        product-detail > img:nth-child(1):hover{
+        .product-details-close{
+            background-color: var(--white);
+            border-radius: 50%;
+            height: 14px;
+            left: 24px;
+            padding: 12px;
+            position: absolute;
+            width: 14px;
+            top: 24px;
+        }
+
+        .product-details-close{
             cursor: pointer;
+        }
+
+        .product-detail > img:nth-child(2){
+            border-radius: 0 0 20px 20px;
+            height: 360px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .product-info{
+            margin: 24px 24px 0 24px;
+        }
+
+        .product-info p:nth-child(1){
+            font-size: var(--md);
+            font-weight: bold;
+            margin-bottom: 4px;
+            margin-top: 0;
+        }
+
+        .product-info p:nth-child(2){
+            color: var(--very-light-pink);
+            font-size: var(--md);
+            margin-bottom: 36px;
+            margin-top: 0;
+        }
+
+        .product-info p:nth-child(3){
+            color: var(--very-light-pink);
+            font-size: var(--sm);
+            margin-bottom: 36px;
+            margin-top: 0;
         }
 
         .primary-button{
             background-color: var(--hospital-green);
-            border: none;
             border-radius: 8px;
-            color: var(--white);
+            border: none;
+            color: white;
             cursor: pointer;
             font-size: var(--md);
+            width: 100%;
             font-weight: bold;
             height: 50px;
-            width: 100%;
         }
 
         .add-to-cart-button{
@@ -52,17 +97,25 @@
             justify-content: center;
         }
 
+        @media (max-width:640px){
+            .product-detail{
+                width: 100%;
+            }
+        }
+
     </style>
 </head>
 <body>
     <aside class="product-detail">
-        <img src="./icons/icon_close.png" alt="close">
+        <div class="product-details-close">
+            <img src="./icons/icon_close.png" alt="close">
+        </div>
         <img src="./img/Computer.jpg" alt="computer">
-        <div class="">
+        <div class="product-info">
             <p>$50</p>
             <p>Computer</p>
-            <p>Os Computadores EasyPC equipados com processadores Intel Core i7 
-                têm desempenho surpreendente. Execute múltiplas tarefas ao mesmo tempo com fluidez.
+            <p>- O computador Gamer Mancer, foi feito para você jogar seus jogos preferidos, 
+                e atender sua necessidade doméstica ou profissional. 
             </p>
             <button class="primary-button add-to-cart-button">
                 <img src="./icons/btn_add_to_card.svg" alt="add">
