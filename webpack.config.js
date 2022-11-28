@@ -1,16 +1,31 @@
 const { builtinModules } = require('module');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: '/'
     },
     resolve: {
         extensions: ['.js', '.jsx'],
+        alias: {
+            '@components': path.resolve(__dirname, 'src/components/'),
+            '@containers': path.resolve(__dirname, 'src/containers/'),
+            '@pages': path.resolve(__dirname, 'src/pages/'),
+            '@styles': path.resolve(__dirname, 'src/styles/'),
+            '@icons': path.resolve(__dirname, 'src/assets/icons/'),
+            '@logos': path.resolve(__dirname, 'src/assets/logos/'),
+            '@hooks': path.resolve(__dirname, 'src/hooks/'),
+            '@context': path.resolve(__dirname, 'src/context')
+        }
     },
+
+    mode: 'development',
+    
     module: {
         rules: [
             {
@@ -23,8 +38,20 @@ module.exports = {
             {
                 test: /\.html$/,
                 use:{
-                    laoder: 'html-loader'
+                    loader: 'html-loader'
                 }
+            },
+            {
+                test:/\.(css|scss)$/,
+                use:[
+                    "style-loader",
+                    "css-loader",
+                    "sass-loader"
+                ]
+            },
+            {
+                test:/\.(jpg|png|svg|gif)$/,
+                type: 'asset'
             }
         ]
     },
@@ -33,7 +60,14 @@ module.exports = {
         new  HtmlWebpackPlugin({
             template: "./public/index.html",
             filename: './index.html'
+        }),
+        new MiniCssExtractPlugin({
+            filename:'[name].css'
         })
-    ]
+    ],
+    
+    devServer: {
+        historyApiFallback: true
+    }
 
 }
