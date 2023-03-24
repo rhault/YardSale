@@ -1,0 +1,138 @@
+:root {
+    --white: #FFFFFF;
+    --black: #000000;
+    --very-light-pink: #C7C7C7;
+    --very-light-text: #766d6d;
+    --text-input-field: #F7F7F7;
+    --hospital-green: #ACD9B2;
+    --sm: 16px;
+    --md: 18px;
+    --lg: 20px
+}
+
+body{
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+}
+
+nav{
+    border-bottom: 1px solid var(--very-light-pink);
+    display: flex;
+    justify-content: space-between;
+    padding: 24px;
+}
+
+.menu{
+    display: none;
+}
+
+.navbar-left{
+    display: flex;
+}
+
+.navbar-left ul,
+.navbar-right ul{
+    align-items: center;
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+
+.navbar-left ul li a,
+.navbar-right ul li a{
+    text-decoration: none;
+    border: 1px solid var(--white);  
+    border-radius: 8px;
+    color: var(--very-light-text);
+    padding: 8px;
+}
+
+.navbar-left ul li a:hover,
+.navbar-right ul li a:hover{            
+    border: 1px solid var(--hospital-green);  
+    color: var(--hospital-green);
+}
+
+.navbar-email{
+    color: var(--very-light-text);
+    font-size: var(--sm);
+    margin-right: 50px;
+}
+
+.navbar-shopping-card{
+    position: relative; 
+}
+
+.navbar-shopping-card div{
+    align-items: center;
+    background-color: var(--hospital-green);
+    border-radius: 50%;
+    display: flex;
+    font-size: var(--sm);
+    font-weight: bold;
+    justify-content: center;
+    height: 16px;
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    width: 16px;
+
+}
+
+.desktop-menu{
+    border: 1px solid var(--very-light-pink);
+    border-radius: 6px;
+    height: auto;
+    padding: 20px 20px 0 20px;
+    position: absolute;
+    right: 40px;
+    top: 80px;
+    width: 150px;
+}
+
+.desktop-menu ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.desktop-menu ul li{
+    text-align: end;
+}
+
+.desktop-menu ul li:last-child{
+    border-top: 1px solid var(--very-light-pink) ;
+    padding-top: 10px;
+}
+
+.desktop-menu ul li:nth-child(1),
+.desktop-menu ul li:nth-child(2){
+    font-weight: bold;
+}
+
+.desktop-menu ul li:last-child a{
+    color: var(--hospital-green);
+    font-size: var(--sm);
+}
+
+.desktop-menu ul li a{
+    color: var(--black);
+    display: inline-block;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.hidden{
+    display: none;
+}
+
+@media (max-width: 640px){
+    .menu{
+        display: block;
+    }
+
+    .navbar-left ul,
+    .navbar-email{
+        display: none;
+    }
+}
