@@ -15,6 +15,8 @@ body{
     margin: 0;
 }
 
+/* navbar */
+
 nav{
     border-bottom: 1px solid var(--very-light-pink);
     display: flex;
@@ -22,6 +24,7 @@ nav{
     padding: 24px;
 }
 
+/* for mobile navbar */
 .mobile-menu-button{
     display: none;
 }
@@ -55,6 +58,7 @@ nav{
 
 .navbar-email{
     color: var(--very-light-text);
+    cursor: pointer;
     font-size: var(--sm);
     margin-right: 50px;
 }
@@ -79,7 +83,11 @@ nav{
 
 }
 
+
+/* desktop menu */
+
 .desktop-menu{
+    background-color: var(--white);
     border: 1px solid var(--very-light-pink);
     border-radius: 6px;
     height: auto;
@@ -88,6 +96,7 @@ nav{
     right: 40px;
     top: 80px;
     width: 150px;
+    z-index: 10;
 }
 
 .desktop-menu ul{
@@ -122,8 +131,10 @@ nav{
     text-decoration: none;
 }
 
+/* mobile menu */
 
 .mobile-menu{
+    background-color: var(--white);
     display: grid;
     justify-content: space-between;
     height: 100vh;
@@ -167,6 +178,97 @@ nav{
     display: none;
 }
 
+/* Shopping Cart */
+
+.product-detail{
+    box-sizing: border-box;
+    padding: 24px;
+    position: absolute;
+    right: 0;
+    width: 360px;
+}
+
+.title-container {
+    display: flex;
+}
+
+.title-container img{
+    cursor: pointer;
+    margin-right: 14px;
+    transform: rotate(180deg);
+}
+
+.title {
+    font-size: var(--lg);
+    font-weight: bold;
+}
+
+.my-order-container{
+    display: grid;
+    grid-template-rows: auto 1fr auto auto;
+    width: 360px;
+}
+
+.my-order-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.order{
+    align-items: center;
+    background-color: var(--text-input-field);
+    border-radius: 8;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: auto 1fr;
+    margin-bottom: 24px;
+    padding: 0 24px;
+}
+
+.order p{
+    font-weight: bold;
+    text-align: end;
+}
+
+.shopping-cart{
+    align-items: center;
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.shopping-cart figure{
+    margin: 0;
+}
+
+.shopping-cart figure img{
+    border-radius: 10px;
+    height: 80px;
+    width: 80px;
+}
+
+.shopping-cart p:nth-child(2){
+    color: var(--very-light-pink);
+}
+
+.shopping-cart p:nth-child(3){
+    font-weight: bold;
+    font-size: var(--md);
+}
+
+.primary-button{
+    background-color: var(--hospital-green);
+    border-radius: 8px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: var(--md);
+    width: 100%;
+    font-weight: bold;
+    height: 50px;
+}
+
 @media (max-width: 740px){
     .mobile-menu-button{
         display: block;
@@ -176,6 +278,10 @@ nav{
     .navbar-email,
     .desktop-menu{
         display: none;
+    }
+
+    .product-detail{
+        width: 100%;
     }
 }
 
